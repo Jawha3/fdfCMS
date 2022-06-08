@@ -1,0 +1,197 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #52DE60;
+}
+
+.label-success {
+    border: 1px solid #000;
+    border-radius: .4rem;
+    background-color: #52DE60;
+    color: #FFF;
+}
+
+.btn-primary {
+    background-color: #52DE60;
+    color: #FFF;
+    border: #52DE60;
+}
+
+.btn-danger {
+    border: #DC3545;
+}
+
+.btn-primary:hover {
+    background-color: #52de60bb;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-right: -5px;   
+    box-sizing: border-box;
+}
+
+.planField {
+    margin-right: 1.5rem;
+}
+
+
+/* CSS for add_edit_workout.php */
+
+.workout-labels {
+    font-weight: 700;
+}
+
+.list-group-item.active {
+    border-color: #52DE60;
+}
+
+.infoHeadline {
+    text-align: center;
+}
+
+.btns {
+    float: right;
+}
+
+
+/* input[type=checkbox],
+input[type=checkbox]:checked~div.inputGroup {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
+    accent-color: #52de60;
+}
+
+button[type=checkbox]:checked:before {
+    background-color: #52DE60;
+    color: #FFF;
+} */
+
+label {
+    position: relative;
+    cursor: pointer;
+}
+
+label [type="checkbox"] {
+    display: none;
+}
+
+[type="checkbox"]+span {
+    display: inline-block;
+}
+
+ :checked+span {
+    background: #52DE60;
+    color: #FFF;
+}
+
+:unchecked+span {
+    background-color: #DC3545;
+}
+
+.listItems {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* 
+.inputGroup input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.inputGroup label {
+    padding: 12px 30px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 200ms ease-in;
+    overflow: hidden;
+}
+
+.inputGroup label:before {
+    width: 10px;
+    height: 10px;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    content: '';
+    background-color: #52DE60;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale3d(1, 1, 1);
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: -1;
+}
+
+.inputGroup label:after {
+    width: 32px;
+    height: 32px;
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: 3px 3px;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+
+.inputGroup input:checked~label {
+    color: #fff;
+}
+
+.inputGroup input:checked~label:before {
+    transform: translate(-50%, -50%) scale3d(56, 56, 1);
+    opacity: 1;
+} */
+
+.form-container {
+    border:1px solid;
+    padding: 80px 120px 120px 120px;
+    background-color: black;
+    border-radius: 5px;
+    margin-top: 20vh;
+   }
+  
+   .formH1 {
+     font-size: 35px;
+     color: #FFF;
+     text-align: center;
+     margin-top:0;
+     margin-bottom: 40px;
+   }
+  
+   .labelEmail, .labelPwd {
+     color: #FFF;
+     font-size: 15px;
+   }
+  
+   span {
+     color: #52DE60;
+   }
+  
+  #btnLogin {
+    margin-top: 30px;
+    background-color: #52DE60;
+    color: #FFF;
+    font-size: 20px;
+  }
+  

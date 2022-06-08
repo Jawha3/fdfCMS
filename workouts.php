@@ -1,0 +1,95 @@
+<?php
+session_start();
+require 'assets/connection/database.php';
+?>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Fit Dig Frem</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/custom_style.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main_layout.css" rel="stylesheet">
+
+    <!-- Media Queries -->
+    <link href="assets/css/mediaQueries.css" rel="stylesheet">
+   
+
+</head>
+
+<body>
+   
+            <?php 
+                $page = "workouts";
+                include 'includes/header_sidebar.php';                 
+            ?>
+
+            <main class="ms-sm-auto col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h2>Træningsplaner</h2>
+                    <form action="assets/scripts/content_processing/add_edit_workout.php" method="post">
+                        <button type="submit" name="addWorkout" class="btn btn-primary btn-lg col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">Tilføj træningsplan</button>
+                    </form>
+                </div>    
+                
+                <?php 
+                // Fejlhåndtering. Henter variabler overført via URL'en og udskriver fejl besked hvis nødvendigt
+                if (isset($_GET['error'])) {
+                    if($_GET['error'] == 'cwErr2') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Træningsplan uden øvelser blev tilføjet. </p>";
+                    }
+                    elseif ($_GET['error'] == 'cwErr1' || $_GET['error'] == 'cwErr3' ||$_GET['error'] == 'cwErr4' || $_GET['error'] == 'cwErr5' || $_GET['error'] == 'cwErr6') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Kunne ikke tilføje en ny træningsplan til databasen.</p>";
+                    }   
+                    elseif ($_GET['error'] == 'dwErr1') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Det var ikke muligt at slette træningsplanen.</p>";
+                    }    
+                    elseif ($_GET['error'] == 'dwErr2') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Du har ikke adgang til denne handling.</p>";
+                    }  
+                    elseif ($_GET['error'] == 'rwErr1' || $_GET['error'] == 'rwErr2') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Det var ikke muligt at hente træningsplanerne.</p>";
+                    }    
+                    elseif ($_GET["error"] == "cwErrEf") {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Kunne ikke oprette træningsplan, alle felter skal udfyldes.</p>";
+                    }  
+                    elseif ($_GET['error'] == 'uwErr1' ) {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Kunne ikke hente oplysninger for den valgte træningsplan. </p>";
+                    }    
+                        
+                    elseif ($_GET['error'] == 'uwErr2' || $_GET['error'] == 'uwErr3') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Kunne ikke hente listen af øvelser. </p>";
+                    } 
+                    
+                    elseif ($_GET['error'] == 'uwErr4') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Kunne ikke opdatere træningsplanen. </p>";
+                    } 
+                                        
+                    elseif ($_GET['error'] == 'uwErrEf') {
+                        echo "<p class='errMessage' style='color:red; margin-top:2vh; font-size: 21px;'> Kunne ikke opdatere øvelse, mindst 1 felt skal ændres. </p>";
+                    }       
+                }          
+                    include 'assets/scripts/crud/read_workouts.php';
+
+                ?>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+</body>
+
+</html>

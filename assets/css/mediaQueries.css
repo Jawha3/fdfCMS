@@ -1,0 +1,59 @@
+/* ***** Media Queries for hele CMS'et ****** */
+
+
+/* Når bredten på browservinduet kommer under henholdsvis 1070px og 925px,
+ gøres teksten i sidebaren mindre */
+
+@media (max-width:1070px) {
+    .sidebar {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width:925px) {
+    .sidebar {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:767.98px) {
+    .logItem {
+        margin-top: auto !important;
+    }
+}
+
+
+/* read_workout.php
+*****************
+Rediger og fjern knappernes tekst bliver mindre
+ved skalering af browservinduet  */
+
+@media (max-width: 1350px) {
+    .smallerFont {
+        font-size: .9rem;
+    }
+}
+
+@media (max-width: 1130px) {
+    .smallerFont {
+        font-size: .8rem;
+    }
+}
+
+
+/* 
+Blokkene for træningsplaner samt knapperne fylder 99% af deres angivede kolonne,
+når browservinduet kommer ned på 575px.
+*******
+halfWidth styre bredden og mellemrummet på knappernes kolonner.
+ */
+
+@media (max-width: 575px) {
+    .fullWidth {
+        width: 100%;
+    }
+    .halfWidth {
+        width: 35%;
+        margin-left: 10% !important;
+    }
+}
